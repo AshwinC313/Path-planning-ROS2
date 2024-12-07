@@ -1,2 +1,2 @@
-# ROS-course-2024
+# Evaluating path planning methods on mobile robots using ROS2
 Contains the packages and source code for the individual tasks
