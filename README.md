@@ -5,7 +5,7 @@
 ![A-model Architecture](images/A_model.jpg)
 <caption>A-model architecture for designing an autonomous vehicle or robot.</caption>
 
-### For this project, the followwing approach is followed :
+### For this project, the following approach is followed :
 
 * #### Teleoperating the robot to scan the environment
 * #### Creating a costmap from the scanned environment
@@ -14,7 +14,3 @@
 
 ## 1. Environment modelling
 ![scanning the environment](images/intro_image_project.png)
-
-
-### For that, an occupancy map is created and a costmap is generated which stores the information about the available space in the map.
-#### Turtlebot's odometry and other vital information is subscribed by a node which futher processes to break down into grid information, after which global path planners are used to generate the path.
