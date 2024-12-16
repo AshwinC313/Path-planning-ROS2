@@ -16,5 +16,5 @@
 ![scanning the environment](images/intro_image_project.png)
 
 ### Costmap created after teleoperation
-![Costmap](images/map.yaml)
+![Costmap](images/map.pgm)
 
