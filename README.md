@@ -3,6 +3,7 @@
 ### The idea of this project is to evaluate and implement the various global path planning approaches to perform autonomous navigation of mobile robots and compare on the performance of various approaches.
 
 ![A-model Architecture](images/A_model.jpg)
+<caption>A-model architecture for designing an autonomous vehicle or robot.</caption>
 
 ### Before implementing any path planning algorithm, its necessary to know the environment in which the robot would be traversing.
 
