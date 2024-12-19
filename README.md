@@ -15,6 +15,8 @@
 ## 1. Environment modelling
 ![scanning the environment](images/intro_image_project.png)
 
-### Costmap created after teleoperation
-![Costmap](images/map.pgm)
+## 2. Costmap Creation
+![Costmap](images/planned_path_gridmap.jpg)
 
+## 3. Path Generated after implementing A* Planner
+![Costmap](images/planned_path_gridmap.jpg)
