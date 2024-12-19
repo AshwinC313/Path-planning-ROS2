@@ -3,6 +3,7 @@ from rclpy.node import Node
 from nav_msgs.msg import OccupancyGrid
 from geometry_msgs.msg import PoseStamped
 from nav_msgs.msg import Odometry
+from geometry_msgs.msg import Pose
 
 class RobotPosition(Node):
     def __init__(self):
@@ -14,6 +15,10 @@ class RobotPosition(Node):
         # Subscribers
         self.create_subscription(OccupancyGrid, '/costmap', self.costmap_callback, 10)
         self.create_subscription(Odometry, '/odom', self.robot_pose_callback, 10)
+
+        # Publishers
+        self.robot_pose_pub = self.create_publisher(Pose, '/current_pose', 10)
+        self.goal_pose_pub = self.create_publisher(Pose, '/goal_pose', 10)
 
         # Timer to compute the robot's position in grid coordinates
         self.timer = self.create_timer(1.0, self.compute_robot_position)
@@ -43,6 +48,24 @@ class RobotPosition(Node):
         grid_y = int((robot_y - origin_y)/resolution)
 
         self.get_logger().info(f"Robot grid position: ({grid_x}, {grid_y})")
+        self.publish_pose(grid_x, grid_y)
+        self.publish_goal_pose(49, 7)
+
+    def publish_pose(self, grid_x, grid_y):
+        pose = Pose()
+        pose.position.x = float(grid_x)
+        pose.position.y = float(grid_y)
+        self.robot_pose_pub.publish(pose)
+        self.get_logger().info(f"Published the current robot's pose wrt. grid : x= {pose.position.x}, y={pose.position.y}")
+
+    def publish_goal_pose(self, grid_x, grid_y):
+        pose = Pose()
+        pose.position.x = float(grid_x)
+        pose.position.y = float(grid_y)
+        self.goal_pose_pub.publish(pose)
+        self.get_logger().info(f"Published the goal pose wrt. grid : x= {pose.position.x}, y={pose.position.y}")
+
+
 
 def main(args=None):
     rclpy.init(args=args)
