@@ -15,8 +15,8 @@
 ## 1. Environment modelling
 ![scanning the environment](images/intro_image_project.png)
 
-## 2. Costmap Creation
+## 2. Path Generated after implementing A* Planner
 ![Costmap](images/planned_path_gridmap.jpg)
 
-## 3. Path Generated after implementing A* Planner
-![Costmap](images/planned_path_gridmap.jpg)
+## 3. RQT Graph showing the navigation stack's interface
+![Rqt Graph](images/rqt_graph1.png)
